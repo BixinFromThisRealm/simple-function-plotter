@@ -54,7 +54,7 @@ const drawFunction = function(f, f_color){
   
   
   // Distance between each point along the X axis.
-  const point_distance = 0.25;//0.5/s_unit;
+  const point_distance = 0.01;//0.5/s_unit;
   
   stroke(f_color);
   strokeWeight(3);
