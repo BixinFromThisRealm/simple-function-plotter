@@ -1,9 +1,7 @@
-const s_side = 500; // The screen size.
-const s_unit = 50; // Size of 1 unit.
+const s_side = 1000; // The screen size.
+const s_unit = 100; // Size of 1 unit.
 const s_middle = s_side/2; 
 
-let graphX = s_middle;
-let graphY = s_middle;
 
 function setup() {
   createCanvas(s_side, s_side);
@@ -28,8 +26,7 @@ const CartesianPlane = function(){
   strokeWeight(1.5);
   
   // Sets up the cartesian plane coordinates.
-  //translate(s_middle, s_middle);
-  translate(graphX, graphY);
+  translate(s_middle, s_middle);
   scale(1, -1);
   
   // Draws the grid.
@@ -54,7 +51,7 @@ const drawFunction = function(f, f_color){
   
   
   // Distance between each point along the X axis.
-  const point_distance = 0.01;//0.5/s_unit;
+  const point_distance = 0.01; //0.5/s_unit;
   
   stroke(f_color);
   strokeWeight(3);
