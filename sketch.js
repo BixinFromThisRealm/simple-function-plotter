@@ -46,9 +46,7 @@ const CartesianPlane = function(){
 }
 
 
-const drawFunction = function(f, f_color){
-  if (f_color === undefined) {f_color = color(150, 0, 0);}
-  
+const drawFunction = function(f, f_color = color(150, 0, 0)){
   
   // Distance between each point along the X axis.
   const point_distance = 0.01; //0.5/s_unit;
