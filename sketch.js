@@ -40,6 +40,15 @@ const CartesianPlane = function(){
   }
   
   stroke(0);
+  // Distance between each point along the X axis.
+  const point_distance = 0.01; //0.5/s_unit;
+  
+  stroke(f_color);
+  strokeWeight(3);
+  
+  
+  // Start from the middle, draw until you hit the upper edge of the screen.
+  for (let x = 0; x < s_middle; 
   strokeWeight(5);
   line(-s_middle, 0, s_middle, 0); // X axis line
   line(0, -s_middle, 0, s_middle); // Y axis line
@@ -49,16 +58,7 @@ const CartesianPlane = function(){
 const drawFunction = function(f, f_color){
   if (f_color === undefined) {f_color = color(150, 0, 0);}
   
-  
-  // Distance between each point along the X axis.
-  const point_distance = 0.01; //0.5/s_unit;
-  
-  stroke(f_color);
-  strokeWeight(3);
-  
-  
-  // Start from the middle, draw until you hit the upper edge of the screen.
-  for (let x = 0; x < s_middle; x+= point_distance) {
+  x+= point_distance) {
     let py = f(x)*s_unit;
     let ny = f(-x)*s_unit;
     
