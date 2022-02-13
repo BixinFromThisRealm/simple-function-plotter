@@ -66,8 +66,8 @@ const drawFunction = function(f, c = color(150, 0, 0)){
     
     if (py < -s_middle || py > s_middle) { break;}
     
-    Vertex(sx, py);
-    Vertex(-sx, ny);
+    vertex(sx, py);
+    vertex(-sx, ny);
   }
   endShape();
 }
