@@ -1,5 +1,5 @@
-const s_side = 1000; // The screen size.
-const s_unit = 100; // Size of 1 unit.
+const s_side = 500; // The screen size.
+const s_unit = 50; // Size of 1 unit.
 const s_middle = s_side/2; 
 
 
@@ -12,6 +12,7 @@ function draw() {
   background(255);
   CartesianPlane();
   drawFunction( x => x**2*((mouseX-s_middle)/s_unit));
+
   //drawFunction(multiplyFunctions(x => x**2, x => x*2), color(0, 170, 0));
 }
 
@@ -51,11 +52,12 @@ const CartesianPlane = function(){
 
 const drawFunction = function(f, c = color(150, 0, 0)){
   
-  stroke(c);
-  
   // Distance between each point along the X axis.
   const point_distance = 0.01; //0.5/s_unit;
   
+  stroke(c);
+  noFill();
+  beginShape();
   for (let x = 0; x < s_middle; x += point_distance) {
     let py = f(x)*s_unit;
     let ny = f(-x)*s_unit;
@@ -64,7 +66,8 @@ const drawFunction = function(f, c = color(150, 0, 0)){
     
     if (py < -s_middle || py > s_middle) { break;}
     
-    point(sx, py);
-    point(-sx, ny);
+    Vertex(sx, py);
+    Vertex(-sx, ny);
   }
+  endShape();
 }
